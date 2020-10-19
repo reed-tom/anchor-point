@@ -1,0 +1,27 @@
+{
+  "name": "ap-api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-promise-router": "^3.0.3",
+    "fetch": "^1.1.0",
+    "file-saver": "^2.0.2",
+    "helmet": "^3.18.0",
+    "morgan": "~1.9.1",
+    "node-fetch": "^2.6.0",
+    "node-server-screenshot": "^0.2.2",
+    "node-webshot": "^1.0.3",
+    "pg": "^7.11.0",
+    "phantomjs-prebuilt": "^2.1.16",
+    "webshot": "^0.18.0",
+    "xml2js": "^0.4.22"
+  }
+}
