@@ -7,25 +7,67 @@
   pointer-events: none;
 }
 
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ap-root .header {
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
   color: white;
+  width: 100%;
+}
+
+.header .menu{
+  position: fixed;
+  left: 5px;
+  width:10vh;
+}
+
+.header .profile{
+  position: fixed;
+  right: 5px;
+  width:20vh;
+}
+
+.header .search{
+  text-align: center;
+}
+.search input{
+  width:100%;
+}
+
+.ap-root .body {
+  background-color: #9e9e9e;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(8px + 2vmin);
+  width: 100%;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+@media only screen and (max-width: 770px) {
+  .ap-root .header {
+    min-height: 20vh;
+  }
+  .header .search{
+    text-align: center;
+
+  }
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +78,5 @@
     transform: rotate(360deg);
   }
 }
+
+
