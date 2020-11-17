@@ -3,7 +3,12 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  background: url("./ap-logo-sm.png");
+  width: 100px;
+  height: 60px;
+  top:10px;
+  left:10px;
+  position: fixed;
   pointer-events: none;
 }
 

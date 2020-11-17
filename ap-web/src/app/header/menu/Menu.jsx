@@ -11,15 +11,15 @@ class Menu extends Component {
     render() {
         return (
             <div className="menu">
-                <div className="navbar-brand">
-                    Brand
-                </div>
                 <div className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <div className="nav-link">
                             Home
                         </div>
                     </li>
+                </div>
+                <div className="navbar-brand">
+                    <div className="App-logo"></div>
                 </div>
             </div>
         );

@@ -12,7 +12,7 @@ class Header extends Component {
     }
     render() {
         return (
-            <div className="header bg-dark">
+            <div className="header bg-light">
                 <nav className="navbar navbar-expand navbar-dark bg-dark">
                     <Menu />
                     <Search />
