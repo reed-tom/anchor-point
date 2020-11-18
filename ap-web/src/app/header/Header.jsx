@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Menu from "./menu/Menu";
-import Profile from "./profile/Profile";
 import Search from "./search/Search";
 class Header extends Component {
     constructor(props) {
@@ -12,12 +11,10 @@ class Header extends Component {
     }
     render() {
         return (
-            <div className="header bg-light">
-                <nav className="navbar navbar-expand navbar-dark bg-dark">
-                    <Menu />
-                    <Search />
-                    <Profile />
-                </nav>
+            <div className="">
+                
+                <Menu />
+                <Search />
             </div>
         );
       }

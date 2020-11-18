@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import Cookies from 'js-cookie';
 
 class Profile extends Component {
@@ -37,45 +37,32 @@ class Profile extends Component {
         //console.log('azureAccessToken', Cookies.get('azureAccessToken'));
         this.getProfile();
     }
-   
+    
+
+    logInOut = () => {
+        if (this.state.profile.name !== undefined){
+            window.location = "http://localhost:5000/auth/logout";
+        }else{
+            window.location = "http://localhost:5000/auth/login";
+        }
+    }
 
     render() {
-        var content = ""
-        if (this.state.profile.name === undefined){
-            content = <a href='http://localhost:5000/auth/login'>Login</a>
-        }else{
-            content = <a href='http://localhost:5000/auth/logout'>Logout</a>
-        }
         return (
-            <div className="profile">
-                <div className="navbar-brand">
-                    User
+            <Fragment>
+            <li className={this.state.profile.name !== undefined ? "nav-item" : "hidden"}>
+                <div className="nav-links" onClick={this.props.closeMenu}>
+                    {this.state.profile.name}
                 </div>
-                <div className="navbar-nav mr-auto">
-                    <li className="nav-item">
-                        <div className="nav-link">
-                        {content}
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        {this.state.profile.name}                        
-                    </li>
+            </li>
+            
+            <li className="nav-item">
+                <div className="nav-links" onClick={this.logInOut}>
+                    {this.state.profile.name !== undefined ? "Logout" : "Login"}
                 </div>
-            </div>
+            </li>
+            </Fragment>
         );
       }
     }
 export default Profile;
-
-const ProfileButton = props => {
-    return (
-      <div
-        className={props.className}
-        onClick={() => {
-          props.onClick();
-        }}
-      >
-        {props.value}
-      </div>
-    );
-  };
