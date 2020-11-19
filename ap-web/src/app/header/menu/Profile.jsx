@@ -11,32 +11,31 @@ class Profile extends Component {
         this.getProfile = this.getProfile.bind(this);
 
       }
-
+      componentDidMount(){
+        this.getProfile();
+      }
     getProfile(){
         // token = this.state.azureAccessToken;
         var bearer = `Bearer ${Cookies.get('azureAccessToken')}`;
         //console.log(bearer);
-        fetch("http://localhost:5000/profile/me", {
-                                                method: 'GET',
-                                                withCredentials: true,
-                                                credentials: 'include',
-                                                headers: {
-                                                    'Authorization': bearer,
-                                                    'Content-Type': 'application/json'                           
-                                                }
-                                            })
-                                            .then(response => response.json())
-                                            .then(jsonData=>{
-                                                this.setState({profile:jsonData},()=>{
-                                                    //console.log(this.state.profile);
+        try{
+            var result = fetch("http://localhost:5000/profile/me", {
+                                                    credentials: 'include',
+                                                    headers: {
+                                                        'Authorization': bearer,
+                                                        'Content-Type': 'application/json'                           
+                                                    }
+                                                })
+                                                .then(response => response.json())
+                                                .then(jsonData => this.setState({profile:jsonData}))
+                                                .catch(error => {
+                                                    //ignore error if no profile returned
                                                 });
-                                            });
+        } catch(error) {}
     }
 
-    componentDidMount(){
-        //console.log('azureAccessToken', Cookies.get('azureAccessToken'));
-        this.getProfile();
-    }
+
+
     
 
     logInOut = () => {
@@ -48,6 +47,8 @@ class Profile extends Component {
     }
 
     render() {
+        
+
         return (
             <Fragment>
             <li className={this.state.profile.name !== undefined ? "nav-item" : "hidden"}>

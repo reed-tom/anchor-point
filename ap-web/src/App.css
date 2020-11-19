@@ -52,7 +52,6 @@
 
 .ap-root .body {
   background-color: #9e9e9e;
-  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;

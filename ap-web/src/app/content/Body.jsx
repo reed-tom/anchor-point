@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Container from "./modules/Container";
+import './Body.css';
 
 class Body extends Component {
     constructor(props) {
@@ -11,7 +13,9 @@ class Body extends Component {
     render() {
         return (
             <div className="body">
-                BODY
+                <Container name="i-Map" url="https://intra.dev.regionalgis.mto.gov.on.ca/map/"></Container>
+                {/*<Container name="Geomatics" url="https://intra.dev.regionalgis.mto.gov.on.ca/geomatics/"></Container>*/}
+                
             </div>
         );
       }
